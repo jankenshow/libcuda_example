@@ -24,7 +24,8 @@ endif()
 
 set(LIB_NAME CudaVecDouble)
 set(LIB_BASE_DIR src/double_vec)
-set(LIB_HEADER CudaVecDouble.h)
+set(LIB_HEADERS CudaVecDouble.h)
+set(LIB_SOURCES CudaVecDouble.cu)
 
 add_subdirectory(${LIB_BASE_DIR})
 
@@ -37,4 +38,4 @@ set(INSTALL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/install")
 
 install(TARGETS ${LIB_NAME} ${LIB_TYPE_ARC} DESTINATION "${INSTALL_DIR}/lib")
 install(TARGETS ${EXEC_FILE_NAME} RUNTIME DESTINATION "${INSTALL_DIR}/bin")
-install(FILES ${LIB_BASE_DIR}/${LIB_HEADER} DESTINATION "${INSTALL_DIR}/include")
+install(FILES ${LIB_BASE_DIR}/${LIB_HEADERS} DESTINATION "${INSTALL_DIR}/include")

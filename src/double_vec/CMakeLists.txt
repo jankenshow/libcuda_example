@@ -26,10 +26,9 @@ if(CUDA_FOUND)
         ${LIB_SOURCES}
         # ${LIB_HEADERS}
     )
-    target_include_directories(${LIB_NAME} INTERFACE ./)
+    target_include_directories(${LIB_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
+# install binary
 install(TARGETS ${LIB_NAME} ${LIB_TYPE_ARC} DESTINATION "${INSTALL_DIR}/lib")
 install(FILES ${LIB_HEADERS} DESTINATION "${INSTALL_DIR}/include")
-
-message(INSTALL_DIR "${INSTALL_DIR}")
